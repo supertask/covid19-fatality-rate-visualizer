@@ -6,10 +6,10 @@ If you change data source url on `main.py`, you can see your country's fatality 
 
 ## Visualization
 ### Japan fatality rate
-![case-fatality rate](./images/Japan_case_fatality_rate.png)
+![case-fatality rate](./images/japan_case_fatality_rate.png)
 
 ### USA fatality rate
-![case-fatality rate](./images/UnitedStates_case_fatality_rate.png)
+![case-fatality rate](./images/unitedStates_case_fatality_rate.png)
 
 
 ## How to install

@@ -19,6 +19,7 @@ CLICKING_ID_PREFIX_CLASS = 'mw-customtoggle-'
 MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'jul-l15']
 clicking_ids = [CLICKING_ID_PREFIX + m for m in MONTHS]
 LASTEST_DOWNLOADED_HTML_PATH = "./resources/last_downloaded.html"
+DAYS_UNTIL_DEATH = 30
 
 def download_html_code():
     options = webdriver.ChromeOptions()
@@ -97,14 +98,23 @@ def main():
     df = get_data_frame(html_code)
     #print(df)
 
+    df.new_death = df.new_death.shift(-DAYS_UNTIL_DEATH)
+    df = df.dropna(how='any')
+    #print(df)
+
     df = df.resample(rule="M", on='day').sum()
     print(df)
-    df.plot()
 
-    df['case_fatality_rate(%)'] = 100 * df['new_death'] / df['new_case']
+    df['case_fatality_rate'] = 100 * df['new_death'] / df['new_case']
     df = df.drop("new_case", axis=1).drop("new_death", axis=1)
     print(df)
+
     df.plot()
+    plt.grid(True)
+    plt.tick_params(labelsize = 9)
+    plt.title('Monthly case-fatality rate by Covid-19')
+    plt.xlabel("Month")
+    plt.ylabel("Case-fatality rate (%)")
     plt.show()
 
 
