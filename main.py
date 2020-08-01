@@ -19,7 +19,7 @@ CLICKING_ID_PREFIX_CLASS = 'mw-customtoggle-'
 MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'jul-l15']
 clicking_ids = [CLICKING_ID_PREFIX + m for m in MONTHS]
 LASTEST_DOWNLOADED_HTML_PATH = "./resources/last_downloaded.html"
-DAYS_UNTIL_DEATH = 30
+DAYS_UNTIL_DEATH = 7 #minimum
 
 def download_html_code():
     options = webdriver.ChromeOptions()
@@ -100,7 +100,7 @@ def main():
 
     df.new_death = df.new_death.shift(-DAYS_UNTIL_DEATH)
     df = df.dropna(how='any')
-    #print(df)
+    print(df)
 
     df = df.resample(rule="M", on='day').sum()
     print(df)
