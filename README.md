@@ -2,7 +2,7 @@
 I haven't seen fatality rate statistics on covid-19 websites except reserch reports.
 This visualization program shows you monthly fatality rate in Japan.
 
-If you change data source url by youself on `main.py`, you can see your country's fatality rate.
+If you change data source url on `main.py`, you can see your country's fatality rate.
 
 ## Visualization
 ![fatality rate](./images/fatality_rate.png)
