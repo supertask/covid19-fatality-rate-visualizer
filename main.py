@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 
 
 COVID19_URL = "https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data/Japan_medical_cases_chart"
+#COVID19_URL = "https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data/United_States_medical_cases_chart"
 CLICKING_ID_PREFIX = 'mw-customcollapsible-'
 CLICKING_ID_PREFIX_CLASS = 'mw-customtoggle-'
 MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'jul-l15']
@@ -100,7 +101,7 @@ def main():
     print(df)
     df.plot()
 
-    df['fatality_rate(%)'] = 100 * df['new_death'] / df['new_case']
+    df['case_fatality_rate(%)'] = 100 * df['new_death'] / df['new_case']
     df = df.drop("new_case", axis=1).drop("new_death", axis=1)
     print(df)
     df.plot()

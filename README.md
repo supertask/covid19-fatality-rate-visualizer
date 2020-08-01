@@ -1,11 +1,16 @@
-# Covid-19 fatality rate visualizer in Japan
-I haven't seen fatality rate statistics on covid-19 websites except reserch reports.
-This visualization program shows you monthly fatality rate in Japan.
+# Covid-19 fatality rate visualizer
+I haven't seen case-fatality rate statistics on covid-19 websites except reserch reports.
+This visualization program shows you monthly case-fatality rate.
 
 If you change data source url on `main.py`, you can see your country's fatality rate.
 
 ## Visualization
-![fatality rate](./images/fatality_rate.png)
+### Japan fatality rate
+![case-fatality rate](./images/Japan_case_fatality_rate.png)
+
+### USA fatality rate
+![case-fatality rate](./images/UnitedStates_case_fatality_rate.png)
+
 
 ## How to install
 
@@ -17,6 +22,8 @@ If you change data source url on `main.py`, you can see your country's fatality 
 
 
 ## Data
+
+### Japan
 ```
             new_case  new_death
 day
@@ -38,6 +45,7 @@ day
 2020-06-30          4.649828
 2020-07-31          0.215476
 ```
+
 
 ## Source
 - [Wikipedia](https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data)
