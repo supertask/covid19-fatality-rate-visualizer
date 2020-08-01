@@ -17,12 +17,12 @@ CLICKING_ID_PREFIX = 'mw-customcollapsible-'
 CLICKING_ID_PREFIX_CLASS = 'mw-customtoggle-'
 MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'jul-l15']
 clicking_ids = [CLICKING_ID_PREFIX + m for m in MONTHS]
-LASTEST_DOWNLOADED_HTML_PATH = "./last_downloaded.html"
+LASTEST_DOWNLOADED_HTML_PATH = "./resources/last_downloaded.html"
 
 def download_html_code():
     options = webdriver.ChromeOptions()
     options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Version/10.0 Mobile/14C92')
-    driver = webdriver.Chrome("./chromedriver", options=options)
+    driver = webdriver.Chrome("./bin/chromedriver", options=options)
     driver.set_window_size(600,1000)
     driver.get(COVID19_URL)
 
